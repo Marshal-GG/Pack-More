@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "890210226667",
+    "project_id": "pack-more",
+    "storage_bucket": "pack-more.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:890210226667:android:e96ead11e7183f313789ae",
+        "android_client_info": {
+          "package_name": "com.example.packmore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "890210226667-66dsppupdnem2nb9omls4asiv9icv1bv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWZLV9m8XHnCJI5FX-0Uwb9j-MAsBLrY4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "890210226667-66dsppupdnem2nb9omls4asiv9icv1bv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "890210226667-4g8nnqhr417oajcll3nsmd1hv8mhirjo.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.packmore"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
