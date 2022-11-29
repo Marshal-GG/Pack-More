@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:packmore/constants.dart';
+import 'package:packmore/master_components/constants.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'screens/login_setup/welcome/welcome_screen.dart';
 
+//initializing the firebase
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
   runApp(const MyApp());
 }
 
+//start of application
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -20,12 +21,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Project JH',
+      title: 'Pack More',
+      home: const WelcomeScreen(),
+      //To set default parameters accross the app
       theme: ThemeData(
         // brightness: Brightness.dark,
         textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),
         primarySwatch: Colors.grey,
         scaffoldBackgroundColor: Colors.white,
+        //Button Theme
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             foregroundColor: kPrimaryLightColor,
@@ -36,6 +40,7 @@ class MyApp extends StatelessWidget {
             minimumSize: const Size(double.infinity, 56),
           ),
         ),
+        //Input Field Theme
         inputDecorationTheme: const InputDecorationTheme(
           filled: true,
           fillColor: kPrimaryLightColor,
@@ -49,7 +54,6 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: const WelcomeScreen(),
     );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../home/home_screen.dart';
+import '../../main_home_screen/home_screen.dart';
 import '../signup/otp/otp_screen.dart';
 import 'google_auth/firebase_services.dart';
 import 'or_divider.dart';

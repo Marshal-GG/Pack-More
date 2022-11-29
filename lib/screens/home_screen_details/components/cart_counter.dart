@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../constants.dart';
+import '../../../master_components/constants.dart';
 
 class CartCounter extends StatefulWidget {
   const CartCounter({Key? key}) : super(key: key);

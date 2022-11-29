@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import '../../../constants.dart';
-import '../../../home/home_screen.dart';
+import '../../../master_components/constants.dart';
+import '../../main_home_screen/home_screen.dart';
 
 class PhoneNumberScreen extends StatefulWidget {
   const PhoneNumberScreen({Key? key}) : super(key: key);

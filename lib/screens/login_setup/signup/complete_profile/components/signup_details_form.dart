@@ -5,9 +5,9 @@ import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 // ignore: depend_on_referenced_packages
 import 'package:intl/intl.dart';
-import '../../../../../constants.dart';
-import '../../../../../home/home_screen.dart';
-import '../../../../../size_config.dart';
+import '../../../../../master_components/constants.dart';
+import '../../../../main_home_screen/home_screen.dart';
+import '../../../../../master_components/size_config.dart';
 import '../../../components/already_have_an_account_check.dart';
 import '../../otp/otp_screen.dart';
 
