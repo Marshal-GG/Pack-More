@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../constants.dart';
+import '../../../../master_components/constants.dart';
 import '../../components/background.dart';
 import '../../components/social_sign_up.dart';
 import '../../responsive.dart';
