@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../../../constants.dart';
+import '../../../../master_components/constants.dart';
 
 class WelcomeImage extends StatelessWidget {
   const WelcomeImage({Key? key}) : super(key: key);

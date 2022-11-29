@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../constants.dart';
-import '../../models/product.dart';
+import '../../../master_components/constants.dart';
+import '../../../models/product.dart';
 import 'product_title_with_image.dart';
 import 'add_to_cart.dart';
 import 'color_and_quantity.dart';

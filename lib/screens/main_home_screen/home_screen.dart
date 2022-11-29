@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../constants.dart';
+import '../../master_components/constants.dart';
 import 'components/body.dart';
 
 class HomeScreen extends StatelessWidget {

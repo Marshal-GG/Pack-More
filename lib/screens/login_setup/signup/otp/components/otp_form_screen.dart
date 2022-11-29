@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../../../../../constants.dart';
-import '../../../../../size_config.dart';
+import '../../../../../master_components/constants.dart';
+import '../../../../../master_components/size_config.dart';
 
 class OtpFormScreen extends StatefulWidget {
   const OtpFormScreen({Key? key}) : super(key: key);

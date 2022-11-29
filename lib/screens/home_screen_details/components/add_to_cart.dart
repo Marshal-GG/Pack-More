@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../constants.dart';
-import '../../models/product.dart';
+import '../../../master_components/constants.dart';
+import '../../../models/product.dart';
 
 class AddToCart extends StatelessWidget {
   const AddToCart({
