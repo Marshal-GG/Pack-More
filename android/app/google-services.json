@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "890210226667",
+    "firebase_url": "https://pack-more-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "pack-more",
     "storage_bucket": "pack-more.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "890210226667-va20qqa8acfm657j4eij60ejqcghquc9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.packmore",
+            "certificate_hash": "6933b3ed109f69cae5cdccd0543d1992ab340e57"
+          }
+        },
         {
           "client_id": "890210226667-66dsppupdnem2nb9omls4asiv9icv1bv.apps.googleusercontent.com",
           "client_type": 3

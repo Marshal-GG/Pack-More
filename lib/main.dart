@@ -1,6 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:packmore/master_components/constants.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:packmore/screens/bottom_navigation_bar/body.dart';
+import 'package:packmore/screens/main_home_screen/home_screen.dart';
+import 'package:packmore/screens/profile/profile_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'firebase_options.dart';
 import 'screens/login_setup/welcome/welcome_screen.dart';
 
@@ -22,7 +27,33 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Pack More',
-      home: const WelcomeScreen(),
+      home:
+          // FutureBuilder(
+          //   future: Firebase.initializeApp(
+          //     options: DefaultFirebaseOptions.currentPlatform,
+          //   ),
+          //   builder: (context, snapshot) {
+          //     if (snapshot.connectionState == ConnectionState.done) {
+          //       return StreamBuilder(
+          //         stream: FirebaseAuth.instance.authStateChanges(),
+          //         builder: (context, snapshot) {
+          //           if (snapshot.hasData) {
+          //             return const BottomNavigationBarPage();
+          //           } else {
+          //             return const WelcomeScreen();
+          //           }
+          //         },
+          //       );
+          //     } else {
+          //       return const Scaffold(
+          //         body: Center(
+          //           child: CircularProgressIndicator(),
+          //         ),
+          //       );
+          //     }
+          //   },
+          // ),
+          const BottomNavigationBarPage(),
       //To set default parameters accross the app
       theme: ThemeData(
         // brightness: Brightness.dark,

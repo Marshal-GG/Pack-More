@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:packmore/screens/bottom_navigation_bar/body.dart';
 import '../../../../master_components/constants.dart';
 import '../../../main_home_screen/home_screen.dart';
 import '../../../../master_components/size_config.dart';
@@ -192,7 +193,9 @@ class _LoginFormState extends State<LoginForm> {
             .then((uid) => {
                   Fluttertoast.showToast(msg: "LoginSuccessful"),
                   Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) => const HomeScreen()),
+                    MaterialPageRoute(
+                      builder: (context) => const BottomNavigationBarPage(),
+                    ),
                   ),
                 });
       } on FirebaseAuthException catch (error) {
