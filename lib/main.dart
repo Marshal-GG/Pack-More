@@ -2,12 +2,15 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:packmore/master_components/constants.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:packmore/screens/add_products_page/add_products.dart';
 import 'package:packmore/screens/bottom_navigation_bar/body.dart';
+import 'package:packmore/screens/cart/cart_screen.dart';
 import 'package:packmore/screens/main_home_screen/home_screen.dart';
 import 'package:packmore/screens/profile/profile_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'firebase_options.dart';
 import 'screens/login_setup/welcome/welcome_screen.dart';
+import 'screens/payment_pages_pages/credit_card.dart';
 
 //initializing the firebase
 Future main() async {
@@ -53,7 +56,9 @@ class MyApp extends StatelessWidget {
           //     }
           //   },
           // ),
-          const BottomNavigationBarPage(),
+          const PaymentPage(),
+      // // const CartScreen(),
+      // const BottomNavigationBarPage(),
       //To set default parameters accross the app
       theme: ThemeData(
         // brightness: Brightness.dark,

@@ -23,9 +23,9 @@ class ProfileMenu extends StatelessWidget {
           style: ElevatedButton.styleFrom(
               backgroundColor: kPrimaryLightColor,
               foregroundColor: kPrimaryColor,
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(kDefaultPaddin),
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15))),
+                  borderRadius: BorderRadius.circular(kDefaultPaddin))),
           onPressed: press, //dynamic calls onPressed
           child: Row(
             children: [

@@ -36,6 +36,7 @@ class _BodyState extends State<Body> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        const SizedBox(height: 20),
         const ProfilePic(),
         const SizedBox(height: 20),
         ProfileMenu(

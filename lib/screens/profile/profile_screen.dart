@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:packmore/master_components/constants.dart';
+import 'package:packmore/side_drawer/side_drawer.dart';
 import 'components/body.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -15,8 +17,12 @@ class ProfileScreen extends StatelessWidget {
   AppBar buildAppBar() {
     return AppBar(
       elevation: 0,
-      title: const Text("Profile"),
-      backgroundColor: Colors.transparent,
+      // leading: MenuWidget(),
+      title: const Text(
+        "Profile",
+        style: TextStyle(color: kPrimaryColor),
+      ),
+      backgroundColor: kPrimaryLightColor,
       centerTitle: true,
     );
   }

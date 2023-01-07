@@ -1,6 +1,8 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:packmore/master_components/constants.dart';
+import 'package:packmore/screens/cart/cart_screen.dart';
 import 'package:packmore/screens/main_home_screen/home_screen.dart';
 import 'package:packmore/screens/profile/profile_screen.dart';
 
@@ -24,33 +26,38 @@ class _BottomNavigationBarState extends State<BottomNavigationBarPage> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      extendBody: true,
-      //backgroundColor: Colors.grey[400],
-      body: PageView(
-        controller: _pageController,
-        onPageChanged: (index) {
-          setState(() {
-            _index = index;
-          });
-        },
-        children: const [
-          HomeScreen(),
-          Center(child: Text('Cart')),
-          Center(child: Text('Profile')),
-          ProfileScreen(),
-        ],
-      ),
-      bottomNavigationBar: CurvedNavigationBar(
+    return SafeArea(
+      top: false,
+      child: Scaffold(
+        extendBody: true,
+        //backgroundColor: Colors.grey[400],
+        body: PageView(
+          controller: _pageController,
+          onPageChanged: (index) {
+            setState(() {
+              _index = index;
+            });
+          },
+          children: const [
+            HomeScreen(),
+            CartScreen(),
+            Center(child: Text('Cart')),
+            ProfileScreen(),
+          ],
+        ),
+        bottomNavigationBar: CurvedNavigationBar(
           index: _index,
           height: 55,
+          animationCurve: Curves.easeInOut,
           backgroundColor: Colors.transparent,
           buttonBackgroundColor: kPrimaryLightColor,
           color: kPrimaryLightColor,
           items: items,
           onTap: (index) {
             _pageController.jumpToPage(index);
-          }),
+          },
+        ),
+      ),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:packmore/side_drawer/side_drawer.dart';
 import '../../master_components/constants.dart';
 import 'components/body.dart';
 
@@ -8,6 +9,7 @@ class HomeScreen extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
+
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
@@ -19,15 +21,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.white,
+      backgroundColor: kPrimaryLightColor,
       elevation: 0,
-      leading: IconButton(
-        icon: const Icon(
-          Icons.menu_rounded,
-          color: kPrimaryColor,
-        ),
-        onPressed: () {},
-      ),
+      leading: const MenuWidget(),
       actions: <Widget>[
         IconButton(
           icon: const Icon(Icons.search),
