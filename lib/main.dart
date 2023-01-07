@@ -30,33 +30,32 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Pack More',
-      home:
-          // FutureBuilder(
-          //   future: Firebase.initializeApp(
-          //     options: DefaultFirebaseOptions.currentPlatform,
-          //   ),
-          //   builder: (context, snapshot) {
-          //     if (snapshot.connectionState == ConnectionState.done) {
-          //       return StreamBuilder(
-          //         stream: FirebaseAuth.instance.authStateChanges(),
-          //         builder: (context, snapshot) {
-          //           if (snapshot.hasData) {
-          //             return const BottomNavigationBarPage();
-          //           } else {
-          //             return const WelcomeScreen();
-          //           }
-          //         },
-          //       );
-          //     } else {
-          //       return const Scaffold(
-          //         body: Center(
-          //           child: CircularProgressIndicator(),
-          //         ),
-          //       );
-          //     }
-          //   },
-          // ),
-          const PaymentPage(),
+      home: FutureBuilder(
+        future: Firebase.initializeApp(
+          options: DefaultFirebaseOptions.currentPlatform,
+        ),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            return StreamBuilder(
+              stream: FirebaseAuth.instance.authStateChanges(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return const BottomNavigationBarPage();
+                } else {
+                  return const WelcomeScreen();
+                }
+              },
+            );
+          } else {
+            return const Scaffold(
+              body: Center(
+                child: CircularProgressIndicator(),
+              ),
+            );
+          }
+        },
+      ),
+      // const PaymentPage(),
       // // const CartScreen(),
       // const BottomNavigationBarPage(),
       //To set default parameters accross the app
