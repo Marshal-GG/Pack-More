@@ -218,9 +218,12 @@ class _SignUpFormState extends State<SignUpForm> {
             .then(
               (value) => {
                 FirebaseFirestore.instance
-                    .collection('UserData')
+                    .collection('Users')
                     .doc(value.user?.uid)
-                    .set({"email": value.user?.email, "name": name}).then(
+                    .set({
+                  "Email": value.user?.email,
+                  "Password": password
+                }).then(
                   (value) => Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
                       builder: (context) => const SignupDetailsScreen(),
@@ -231,6 +234,7 @@ class _SignUpFormState extends State<SignUpForm> {
             );
       } on FirebaseAuthException catch (error) {
         Fluttertoast.showToast(
+          backgroundColor: kPrimaryColor,
           msg: error.message.toString(),
           gravity: ToastGravity.TOP,
         );
