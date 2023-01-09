@@ -1,8 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+
 // ignore: depend_on_referenced_packages
 import 'package:intl/intl.dart';
 import '../../../../../master_components/constants.dart';
@@ -10,6 +13,8 @@ import '../../../../main_home_screen/home_screen.dart';
 import '../../../../../master_components/size_config.dart';
 import '../../../components/already_have_an_account_check.dart';
 import '../../otp/otp_screen.dart';
+
+final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class SignupDetailsForm extends StatefulWidget {
   const SignupDetailsForm({
@@ -90,14 +95,34 @@ class _SignupDetailsFormState extends State<SignupDetailsForm> {
 
   ElevatedButton buildSignUpButton(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {
+      onPressed: () async {
+        final User? currentUser = _auth.currentUser;
         verifyNumber();
         if (_formKey.currentState!.validate()) {
           _formKey.currentState!.save();
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => const OtpScreen()),
-          );
+          try {
+            final user = await FirebaseFirestore.instance
+                .collection("Users")
+                .doc(currentUser?.uid)
+                .update({
+              'Name': fullName,
+              'PhoneNumber': phoneNumber,
+              'DOB': dob, //Timestamp.fromDate(DateTime.parse(dob!)),
+              'Address': address,
+            });
+            // ignore: use_build_context_synchronously
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const OtpScreen()),
+            );
+          } on FirebaseAuthException catch (error) {
+            Fluttertoast.showToast(
+              backgroundColor: kPrimaryColor,
+              msg: error.message.toString(),
+              gravity: ToastGravity.TOP,
+            );
+          }
+
           //go to otp screen
         }
         // Navigator.push(
@@ -147,10 +172,13 @@ class _SignupDetailsFormState extends State<SignupDetailsForm> {
     return DateTimeField(
       onChanged: (value) {
         if (value != null) {
+          setState(() {
+            dob = format.format(value);
+          });
           return removeError(error: kDOBNullError);
         }
-        // ignore: avoid_returning_null_for_void
-        return null;
+
+        return;
       },
       validator: (value) {
         if (value != null) {

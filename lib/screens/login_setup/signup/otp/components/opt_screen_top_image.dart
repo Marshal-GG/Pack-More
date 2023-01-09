@@ -1,15 +1,42 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../../master_components/constants.dart';
 
-class OtpScreenTopImage extends StatelessWidget {
+final currentUser = FirebaseAuth.instance.currentUser;
+final DocumentReference phoneNumberRef =
+    FirebaseFirestore.instance.collection('Users').doc(currentUser?.uid);
+
+class OtpScreenTopImage extends StatefulWidget {
   const OtpScreenTopImage({
     Key? key,
   }) : super(key: key);
 
   @override
+  State<OtpScreenTopImage> createState() => _OtpScreenTopImageState();
+}
+
+class _OtpScreenTopImageState extends State<OtpScreenTopImage> {
+  Object? _phoneNumber;
+
+  @override
+  void initState() {
+    super.initState();
+    _loadPhoneNumber();
+  }
+
+  Future<void> _loadPhoneNumber() async {
+    final DocumentSnapshot phoneNumberSnapshot = await phoneNumberRef.get();
+    setState(() {
+      _phoneNumber = phoneNumberSnapshot.data();
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SizedBox(
+      height: MediaQuery.of(context).size.height,
       width: double.infinity,
       child: Column(
         children: [
@@ -17,10 +44,10 @@ class OtpScreenTopImage extends StatelessWidget {
             "OTP Verification",
             style: headingStyle,
           ),
-          const Text(
-            "We sent your code to +91 ********",
+          Text(
+            "We sent your code to +91 ${_phoneNumber.toString()}",
             textAlign: TextAlign.center,
-            style: TextStyle(color: kTextColor),
+            style: const TextStyle(color: kTextColor),
           ),
           buildTimer(),
           const SizedBox(height: kDefaultPaddin),

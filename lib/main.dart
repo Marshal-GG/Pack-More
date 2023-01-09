@@ -5,6 +5,9 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:packmore/screens/add_products_page/add_products.dart';
 import 'package:packmore/screens/bottom_navigation_bar/body.dart';
 import 'package:packmore/screens/cart/cart_screen.dart';
+import 'package:packmore/screens/login_setup/signup/complete_profile/components/signup_details_form.dart';
+import 'package:packmore/screens/login_setup/signup/complete_profile/signup_details_screen.dart';
+import 'package:packmore/screens/login_setup/signup/otp/otp_screen.dart';
 import 'package:packmore/screens/main_home_screen/home_screen.dart';
 import 'package:packmore/screens/profile/profile_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -56,7 +59,7 @@ class MyApp extends StatelessWidget {
           //     }
           //   },
           // ),
-          const PaymentPage(),
+          const WelcomeScreen(),
       // // const CartScreen(),
       // const BottomNavigationBarPage(),
       //To set default parameters accross the app
