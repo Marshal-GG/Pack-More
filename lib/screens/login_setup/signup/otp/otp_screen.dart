@@ -44,7 +44,7 @@ class MobileOTPScreen extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const OtpScreenTopImage(),
+         OtpScreenTopImage(),
         Row(
           children: const [
             Spacer(),
@@ -67,7 +67,7 @@ class DesktopOTPScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Expanded(child: OtpScreenTopImage()),
+         Expanded(child: OtpScreenTopImage()),
         Expanded(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
