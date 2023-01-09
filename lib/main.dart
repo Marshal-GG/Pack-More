@@ -7,10 +7,10 @@ import 'package:packmore/screens/bottom_navigation_bar/body.dart';
 import 'package:packmore/screens/cart/cart_screen.dart';
 import 'package:packmore/screens/main_home_screen/home_screen.dart';
 import 'package:packmore/screens/profile/profile_screen.dart';
-//import 'package:shared_preferences/shared_preferences.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'firebase_options.dart';
 import 'screens/login_setup/welcome/welcome_screen.dart';
-//import 'screens/payment_pages_pages/credit_card.dart';
+import 'screens/payment_pages_pages/credit_card.dart';
 
 //initializing the firebase
 Future main() async {
