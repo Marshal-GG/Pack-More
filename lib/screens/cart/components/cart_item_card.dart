@@ -16,10 +16,14 @@ class CartItemCard extends StatelessWidget {
     return Row(
       children: [
         SizedBox(
-          width: getProportionateScreenWidth(88),
+          width: getProportionateScreenWidth(60),
+          // height: getProportionateScreenHeight(60),
           child: AspectRatio(
             aspectRatio: 0.88,
             child: Container(
+              padding: EdgeInsets.all(15),
+              height: getProportionateScreenWidth(30),
+              width: getProportionateScreenWidth(30),
               decoration: BoxDecoration(
                 color: cart.product.color,
                 borderRadius: BorderRadius.circular(10),

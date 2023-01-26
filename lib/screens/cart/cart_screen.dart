@@ -51,8 +51,8 @@ class CheckOutCard extends StatelessWidget {
     return SafeArea(
       child: Container(
         padding: EdgeInsets.symmetric(
-          vertical: getProportionateScreenWidth(15),
-          horizontal: getProportionateScreenWidth(30),
+          vertical: getProportionateScreenHeight(10),
+          horizontal: getProportionateScreenWidth(20),
         ),
         //height: 174,
         decoration: BoxDecoration(
