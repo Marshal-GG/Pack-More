@@ -14,8 +14,6 @@ import '../../../../../master_components/size_config.dart';
 import '../../../components/already_have_an_account_check.dart';
 import '../../otp/otp_screen.dart';
 
-final FirebaseAuth _auth = FirebaseAuth.instance;
-
 class SignupDetailsForm extends StatefulWidget {
   const SignupDetailsForm({
     Key? key,
@@ -96,7 +94,8 @@ class _SignupDetailsFormState extends State<SignupDetailsForm> {
   ElevatedButton buildSignUpButton(BuildContext context) {
     return ElevatedButton(
       onPressed: () async {
-        final User? currentUser = _auth.currentUser;
+        final User? currentUser = auth.currentUser;
+        String uid = auth.currentUser!.uid.toString();
         verifyNumber();
         if (_formKey.currentState!.validate()) {
           _formKey.currentState!.save();
@@ -109,6 +108,7 @@ class _SignupDetailsFormState extends State<SignupDetailsForm> {
               'PhoneNumber': phoneNumber,
               'DOB': dob, //Timestamp.fromDate(DateTime.parse(dob!)),
               'Address': address,
+              'uid': uid
             });
             // ignore: use_build_context_synchronously
             Navigator.push(

@@ -44,7 +44,7 @@ class MobileOTPScreen extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-         OtpScreenTopImage(),
+        const OtpScreenTopImage(),
         Row(
           children: const [
             Spacer(),
@@ -67,7 +67,7 @@ class DesktopOTPScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-         Expanded(child: OtpScreenTopImage()),
+        const Expanded(child: OtpScreenTopImage()),
         Expanded(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -79,7 +79,7 @@ class DesktopOTPScreen extends StatelessWidget {
             SizedBox(
               height: kDefaultPaddin / 2,
             ),
-            SocialSignUp(),
+            //SocialSignUp(),
           ],
         ))
       ],

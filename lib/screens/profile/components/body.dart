@@ -1,6 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:packmore/master_components/constants.dart';
+import 'package:packmore/master_components/size_config.dart';
 import 'package:packmore/screens/login_setup/welcome/welcome_screen.dart';
+import 'package:packmore/screens/my_account/edit_my_account_details/edit_my_account_details.dart';
+import 'package:packmore/screens/my_account/my_account.dart';
 import 'profile_menu.dart';
 import 'profile_pic.dart';
 
@@ -36,13 +40,27 @@ class _BodyState extends State<Body> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(height: 20),
-        const ProfilePic(),
-        const SizedBox(height: 20),
+        SizedBox(height: getProportionateScreenHeight(kDefaultPaddin)),
+        ProfilePic(
+            isEdit: false,
+            press: () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) => const EditMyAccountDetailsPage(),
+                ),
+              );
+            }),
+        SizedBox(height: getProportionateScreenHeight(kDefaultPaddin)),
         ProfileMenu(
           iconIndex: 0,
           text: "My Account",
-          press: () {},
+          press: () {
+            Navigator.of(context).pushReplacement(
+              MaterialPageRoute(
+                builder: (context) => const MyAccountPage(),
+              ),
+            );
+          },
         ),
         ProfileMenu(
           iconIndex: 1,

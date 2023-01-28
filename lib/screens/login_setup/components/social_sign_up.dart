@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:packmore/screens/bottom_navigation_bar/body.dart';
 import '../../main_home_screen/home_screen.dart';
 import '../signup/otp/otp_screen.dart';
 import 'google_auth/firebase_services.dart';
@@ -40,7 +41,7 @@ class SocialSignUp extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) {
-                      return const HomeScreen();
+                      return const BottomNavigationBarPage();
                     },
                   ),
                 );
