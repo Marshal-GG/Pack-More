@@ -31,6 +31,7 @@ class _BottomNavigationBarState extends State<BottomNavigationBarPage> {
       child: Scaffold(
         extendBody: true,
         //backgroundColor: Colors.grey[400],
+        // appBar: AppBar(),
         body: PageView(
           controller: _pageController,
           onPageChanged: (index) {

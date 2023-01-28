@@ -1,4 +1,4 @@
-package com.example.packmore
+package com.packmore
 
 import io.flutter.embedding.android.FlutterActivity
 

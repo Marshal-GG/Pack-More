@@ -20,31 +20,34 @@ class ProfileMenu extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
       child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-              backgroundColor: kPrimaryLightColor,
-              foregroundColor: kPrimaryColor,
-              padding: const EdgeInsets.all(kDefaultPaddin),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(kDefaultPaddin))),
-          onPressed: press, //dynamic calls onPressed
-          child: Row(
-            children: [
-              Icon(pvticonsprofile[iconIndex]), //icon in dynamic way
-              const SizedBox(
-                width: 20,
-              ),
-              Expanded(
-                child: Text(
-                  text, //dynamic text
-                  style: const TextStyle(
-                    //color: kPrimaryLightColor,
-                    fontWeight: FontWeight.bold,
-                  ),
+        style: ElevatedButton.styleFrom(
+          backgroundColor: kPrimaryLightColor,
+          foregroundColor: kPrimaryColor,
+          padding: const EdgeInsets.symmetric(horizontal: kDefaultPaddin),
+          // shape: RoundedRectangleBorder(
+          //   borderRadius: BorderRadius.circular(kDefaultPaddin),
+          // ),
+        ),
+        onPressed: press, //dynamic calls onPressed
+        child: Row(
+          children: [
+            Icon(pvticonsprofile[iconIndex]), //icon in dynamic way
+            const SizedBox(
+              width: 20,
+            ),
+            Expanded(
+              child: Text(
+                text, //dynamic text
+                style: const TextStyle(
+                  //color: kPrimaryLightColor,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-              const Icon(Icons.arrow_forward_ios_rounded)
-            ],
-          )),
+            ),
+            const Icon(Icons.arrow_forward_ios_rounded)
+          ],
+        ),
+      ),
     );
   }
 }
