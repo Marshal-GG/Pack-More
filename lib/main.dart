@@ -65,6 +65,8 @@ class MyApp extends StatelessWidget {
       //To set default parameters accross the app
       theme: ThemeData(
         // brightness: Brightness.dark,
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: kPrimaryColor),
         textTheme: Theme.of(context).textTheme.apply(bodyColor: kTextColor),
         primarySwatch: Colors.grey,
         scaffoldBackgroundColor: Colors.white,

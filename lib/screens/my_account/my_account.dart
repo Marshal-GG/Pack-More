@@ -19,22 +19,26 @@ class _MyAccountPageState extends State<MyAccountPage> {
     final user = UserPreferences.myUser;
     return Scaffold(
       appBar: buildAppBar(),
-      body: Column(children: [
-        SizedBox(height: getProportionateScreenHeight(kDefaultPaddin)),
-        Center(
-            child: ProfilePic(
-          isEdit: false,
-          press: () {
-            Navigator.of(context).pushReplacement(
-              MaterialPageRoute(
-                builder: (context) => const EditMyAccountDetailsPage(),
-              ),
-            );
-          },
-        )),
-        SizedBox(height: getProportionateScreenHeight(kDefaultPaddin / 2)),
-        buildNameEmail(user)
-      ]),
+      body: Scaffold(
+        body: SingleChildScrollView(
+          child: Column(children: [
+            SizedBox(height: getProportionateScreenHeight(kDefaultPaddin)),
+            Center(
+                child: ProfilePic(
+              isEdit: false,
+              press: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) => const EditMyAccountDetailsPage(),
+                  ),
+                );
+              },
+            )),
+            SizedBox(height: getProportionateScreenHeight(kDefaultPaddin / 2)),
+            buildNameEmail(user)
+          ]),
+        ),
+      ),
     );
   }
 

@@ -12,7 +12,7 @@ class WelcomeImage extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            "Welcome to Project JH",
+            "Pack More",
             style: headingStyle,
           ),
           const SizedBox(
