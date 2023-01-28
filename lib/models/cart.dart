@@ -1,5 +1,4 @@
 import 'package:packmore/models/product.dart';
-import 'package:flutter/material.dart';
 
 class Cart {
   final Product product;
