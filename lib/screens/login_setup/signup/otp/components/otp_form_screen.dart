@@ -1,7 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import '../../../../../master_components/constants.dart';
 import '../../../../../master_components/size_config.dart';
+
+final FirebaseAuth _auth = FirebaseAuth.instance;
 
 class OtpFormScreen extends StatefulWidget {
   const OtpFormScreen({Key? key}) : super(key: key);
@@ -11,7 +15,31 @@ class OtpFormScreen extends StatefulWidget {
 }
 
 class _OtpFormScreenState extends State<OtpFormScreen> {
+
+  String verificationReceivedID = "";
+  String countryDial = "+91";
+
   final _formKey = GlobalKey<FormState>();
+
+  final List<String?> errors = [];
+  void addError({String? error}) {
+    if (!errors.contains(error)) {
+      setState(() {
+        errors.add(error);
+      });
+    }
+  }
+
+  void removeError({String? error}) {
+    if (errors.contains(error)) {
+      setState(() {
+        errors.remove(error);
+      });
+    }
+  }
+
+  FirebaseAuth auth = FirebaseAuth.instance;
+
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -55,11 +83,26 @@ class _OtpFormScreenState extends State<OtpFormScreen> {
       ],
       onChanged: (value) {
         if (value.length == 6) {
+          final verificationId = verificationReceivedID;
+      final smsOTP = value;
+      AuthCredential authCreds = PhoneAuthProvider.credential(
+        verificationId: verificationId,
+        smsCode: smsOTP,
+      );
+      auth.signInWithCredential(authCreds).catchError((e) {
+        Fluttertoast.showToast(msg: e.toString());
+      });
           FocusScope.of(context).nextFocus();
         }
       },
       onSaved: (pin) {
         //setup to store value
+      },
+      validator: (value) {
+        if (value!.length != 6) {
+          return 'OTP must be 6 digits';
+        }
+        return null;
       },
     );
   }
