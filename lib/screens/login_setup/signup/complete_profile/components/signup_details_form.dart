@@ -103,7 +103,7 @@ class _SignupDetailsFormState extends State<SignupDetailsForm> {
             await FirebaseFirestore.instance
                 .collection("Users")
                 .doc(currentUser?.uid)
-                .set({
+                .update({
               'Name': fullName,
             });
             await FirebaseFirestore.instance
@@ -116,7 +116,7 @@ class _SignupDetailsFormState extends State<SignupDetailsForm> {
               'DOB': dob, //Timestamp.fromDate(DateTime.parse(dob!)),
               'Address': address,
               'uid': uid
-            });
+            }, SetOptions(merge: true));
             // ignore: use_build_context_synchronously
             Navigator.push(
               context,
