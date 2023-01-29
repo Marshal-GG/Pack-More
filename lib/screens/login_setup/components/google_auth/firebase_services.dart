@@ -28,7 +28,7 @@ class FirebaseServices {
             .set({
           "Name": currentUser?.displayName,
           "Email": currentUser?.email,
-        });
+        }, SetOptions(merge: true));
         await FirebaseFirestore.instance
             .collection('Users')
             .doc(currentUser?.uid)
@@ -39,7 +39,7 @@ class FirebaseServices {
           "Email": currentUser?.email,
           "Uid": currentUser?.uid,
           "Photo URL": currentUser?.photoURL,
-        });
+        }, SetOptions(merge: true));
         await FirebaseFirestore.instance
             .collection('Users')
             .doc(currentUser?.uid)
@@ -47,7 +47,7 @@ class FirebaseServices {
             .doc('Provided Info')
             .set({
           "GNumber": currentUser?.phoneNumber,
-        });
+        }, SetOptions(merge: true));
         await FirebaseFirestore.instance
             .collection('Users')
             .doc(currentUser?.uid)
@@ -57,7 +57,7 @@ class FirebaseServices {
           "Address": "",
           "City": "",
           "Zipcode": "",
-        });
+        }, SetOptions(merge: true));
       }
     } on FirebaseAuthException catch (e) {
       print('Failed with error code: ${e.code}');
