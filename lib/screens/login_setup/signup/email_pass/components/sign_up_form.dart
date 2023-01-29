@@ -220,10 +220,8 @@ class _SignUpFormState extends State<SignUpForm> {
                 FirebaseFirestore.instance
                     .collection('Users')
                     .doc(value.user?.uid)
-                    .set({
-                  "Email": value.user?.email,
-                  "Password": password
-                }).then(
+                    .set({"Email": value.user?.email, "Password": password},
+                        SetOptions(merge: true)).then(
                   (value) => Navigator.of(context).pushReplacement(
                     MaterialPageRoute(
                       builder: (context) => const SignupDetailsScreen(),
