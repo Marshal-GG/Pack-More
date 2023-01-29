@@ -8,20 +8,12 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:890210226667:android:e96ead11e7183f313789ae",
+        "mobilesdk_app_id": "1:890210226667:android:f25605c921ff23283789ae",
         "android_client_info": {
           "package_name": "com.packmore"
         }
       },
       "oauth_client": [
-        {
-          "client_id": "890210226667-va20qqa8acfm657j4eij60ejqcghquc9.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.packmore",
-            "certificate_hash": "6933b3ed109f69cae5cdccd0543d1992ab340e57"
-          }
-        },
         {
           "client_id": "890210226667-66dsppupdnem2nb9omls4asiv9icv1bv.apps.googleusercontent.com",
           "client_type": 3
@@ -43,7 +35,7 @@
               "client_id": "890210226667-4g8nnqhr417oajcll3nsmd1hv8mhirjo.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.packmore"
+                "bundle_id": "com.example.packmore"
               }
             }
           ]

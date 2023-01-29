@@ -9,6 +9,7 @@ class FirebaseServices {
   User? currentUser;
   String? userName;
   String? userEmail;
+
   signInWithGoogle() async {
     try {
       final GoogleSignInAccount? googleSignInAccount =
@@ -20,16 +21,43 @@ class FirebaseServices {
             accessToken: googleSignInAuthentication.accessToken,
             idToken: googleSignInAuthentication.idToken);
         await _auth.signInWithCredential(authCredential);
+        currentUser = _auth.currentUser;
         await FirebaseFirestore.instance
-            .collection('UserData')
+            .collection('Users')
             .doc(currentUser?.uid)
-            .set(
-          {
-            "userName": currentUser?.displayName,
-            "userEmail": currentUser?.email,
-            "userUid": currentUser?.uid,
-          },
-        );
+            .set({
+          "Name": currentUser?.displayName,
+          "Email": currentUser?.email,
+        });
+        await FirebaseFirestore.instance
+            .collection('Users')
+            .doc(currentUser?.uid)
+            .collection("Details")
+            .doc("Basic Info")
+            .set({
+          "GName": currentUser?.displayName,
+          "Email": currentUser?.email,
+          "Uid": currentUser?.uid,
+          "Photo URL": currentUser?.photoURL,
+        });
+        await FirebaseFirestore.instance
+            .collection('Users')
+            .doc(currentUser?.uid)
+            .collection('Details')
+            .doc('Provided Info')
+            .set({
+          "GNumber": currentUser?.phoneNumber,
+        });
+        await FirebaseFirestore.instance
+            .collection('Users')
+            .doc(currentUser?.uid)
+            .collection('Details')
+            .doc('Address')
+            .set({
+          "Address": "",
+          "City": "",
+          "Zipcode": "",
+        });
       }
     } on FirebaseAuthException catch (e) {
       print('Failed with error code: ${e.code}');
