@@ -100,11 +100,18 @@ class _SignupDetailsFormState extends State<SignupDetailsForm> {
         if (_formKey.currentState!.validate()) {
           _formKey.currentState!.save();
           try {
-            final user = await FirebaseFirestore.instance
+            await FirebaseFirestore.instance
                 .collection("Users")
                 .doc(currentUser?.uid)
-                .update({
+                .set({
               'Name': fullName,
+            });
+            await FirebaseFirestore.instance
+                .collection("Users")
+                .doc(currentUser?.uid)
+                .collection("Details")
+                .doc("Basic Info")
+                .set({
               'PhoneNumber': phoneNumber,
               'DOB': dob, //Timestamp.fromDate(DateTime.parse(dob!)),
               'Address': address,

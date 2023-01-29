@@ -49,49 +49,41 @@ class DefaultFirebaseOptions {
     messagingSenderId: '890210226667',
     projectId: 'pack-more',
     authDomain: 'pack-more.firebaseapp.com',
-    databaseURL:
-        'https://pack-more-default-rtdb.asia-southeast1.firebasedatabase.app',
+    databaseURL: 'https://pack-more-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'pack-more.appspot.com',
     measurementId: 'G-DJNL1MPGW3',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyAWZLV9m8XHnCJI5FX-0Uwb9j-MAsBLrY4',
-    appId: '1:890210226667:android:e96ead11e7183f313789ae',
+    appId: '1:890210226667:android:f25605c921ff23283789ae',
     messagingSenderId: '890210226667',
     projectId: 'pack-more',
-    databaseURL:
-        'https://pack-more-default-rtdb.asia-southeast1.firebasedatabase.app',
+    databaseURL: 'https://pack-more-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'pack-more.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyCB9ehtN1kAIz1prm4dJJuE2_VZI9jckBk',
-    appId: '1:890210226667:ios:0ba19b4e47231bc43789ae',
+    appId: '1:890210226667:ios:4194baae970916023789ae',
     messagingSenderId: '890210226667',
     projectId: 'pack-more',
-    databaseURL:
-        'https://pack-more-default-rtdb.asia-southeast1.firebasedatabase.app',
+    databaseURL: 'https://pack-more-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'pack-more.appspot.com',
-    androidClientId:
-        '890210226667-va20qqa8acfm657j4eij60ejqcghquc9.apps.googleusercontent.com',
-    iosClientId:
-        '890210226667-4g8nnqhr417oajcll3nsmd1hv8mhirjo.apps.googleusercontent.com',
+    androidClientId: '890210226667-va20qqa8acfm657j4eij60ejqcghquc9.apps.googleusercontent.com',
+    iosClientId: '890210226667-th1qnsae40gm6ckun15doc94ehsvndvp.apps.googleusercontent.com',
     iosBundleId: 'com.packmore',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyCB9ehtN1kAIz1prm4dJJuE2_VZI9jckBk',
-    appId: '1:890210226667:ios:0ba19b4e47231bc43789ae',
+    appId: '1:890210226667:ios:4194baae970916023789ae',
     messagingSenderId: '890210226667',
     projectId: 'pack-more',
-    databaseURL:
-        'https://pack-more-default-rtdb.asia-southeast1.firebasedatabase.app',
+    databaseURL: 'https://pack-more-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'pack-more.appspot.com',
-    androidClientId:
-        '890210226667-va20qqa8acfm657j4eij60ejqcghquc9.apps.googleusercontent.com',
-    iosClientId:
-        '890210226667-4g8nnqhr417oajcll3nsmd1hv8mhirjo.apps.googleusercontent.com',
+    androidClientId: '890210226667-va20qqa8acfm657j4eij60ejqcghquc9.apps.googleusercontent.com',
+    iosClientId: '890210226667-th1qnsae40gm6ckun15doc94ehsvndvp.apps.googleusercontent.com',
     iosBundleId: 'com.packmore',
   );
 }
