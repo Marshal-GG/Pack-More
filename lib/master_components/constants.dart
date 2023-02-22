@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:packmore/master_components/size_config.dart';
 
+// Light theme colors
 const kTextColor = Color(0xFF535353);
 const kTextLightColor = Color(0xFFACACAC);
-
 const kPrimaryColor = Color(0xFF6F35A5);
 const kPrimaryLightColor = Color(0xFFF1E6FF);
-
 const kDefaultPaddin = 20.0;
 
 final headingStyle = TextStyle(
@@ -28,3 +27,9 @@ const String kNameNullError = "Please Enter your name";
 const String kPhoneNumberNullError = "Please Enter your phone number";
 const String kAddressNullError = "Please Enter your address";
 const String kDOBNullError = "Please Enter your DOB";
+
+// Dark theme colors
+// const Color kDarkPrimaryColor = Color(0xFF1E2123);
+// const Color kDarkPrimaryLightColor = Color(0xFF4F5357);
+// const Color kDarkTextColor = Colors.white;
+// const double kDarkDefaultPaddin = 20.0;
