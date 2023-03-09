@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:packmore/core/widget_tree.dart';
 import 'package:packmore/core/widgets_wrapper.dart';
 import 'package:packmore/screens/bottom_navigation_bar/bottom_navigation_bar_widget.dart';
+import 'package:packmore/screens/feedback/feedback_screen.dart';
 import 'package:packmore/screens/login_setup/welcome/welcome_screen.dart';
 import 'package:packmore/screens/main_home_screen/home_screen.dart';
+import 'package:packmore/screens/my_account/edit_my_account_details/edit_my_account_details.dart';
 import 'package:packmore/screens/my_account/my_account.dart';
 
 import '../../screens/profile/profile_screen.dart';
@@ -19,15 +21,21 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     case '/widget-tree':
       return MaterialPageRoute(
           builder: (_) => WidgetTree(), settings: settings);
-    case '/bottom_nav':
-      return MaterialPageRoute(
-          builder: (_) => BottomNavigationBarPage(), settings: settings);
+    // case '/bottom_nav':
+    //   return MaterialPageRoute(
+    //       builder: (_) => BottomNavigationBarPage(), settings: settings);
     case '/home_screen':
       return MaterialPageRoute(
           builder: (_) => HomeScreen(), settings: settings);
     case '/my-account-page':
       return MaterialPageRoute(
           builder: (_) => MyAccountPage(), settings: settings);
+    case '/edit-my-account-details-page':
+      return MaterialPageRoute(
+          builder: (_) => EditMyAccountDetailsPage(), settings: settings);
+    case '/feedback-screen':
+      return MaterialPageRoute(
+          builder: (_) => FeedbackScreen(), settings: settings);
     // case '/cart':
     // return MaterialPageRoute(builder: (_) => CartScreen());
     // case '/add_to_cart':

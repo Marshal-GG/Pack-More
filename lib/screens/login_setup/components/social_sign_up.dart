@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:packmore/screens/bottom_navigation_bar/bottom_navigation_bar_widget.dart';
-import '../../main_home_screen/home_screen.dart';
 import '../signup/otp/otp_screen.dart';
 import 'google_auth/firebase_services.dart';
 import 'or_divider.dart';
@@ -36,15 +34,7 @@ class SocialSignUp extends StatelessWidget {
               iconsrc: "assets/icons/google.svg",
               press: () async {
                 await FirebaseServices().signInWithGoogle();
-                // ignore: use_build_context_synchronously
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return const BottomNavigationBarPage();
-                    },
-                  ),
-                );
+                Navigator.pushNamed(context, '/widget-tree');
               },
             ),
             // SocialIcon(

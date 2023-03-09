@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'core/notifiers.dart';
+import 'core/services/notifiers.dart';
 import 'core/routes/router.dart';
 import 'core/widget_tree.dart';
 import 'core/widgets_wrapper.dart';
-import 'screens/main_home_screen/home_screen.dart';
 import 'core/app_theme_data.dart';
 import 'core/routes/my_nav_observer.dart';
 
@@ -27,9 +26,7 @@ class MyApp extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           theme: appTheme(isDark),
           title: 'Pack More',
-          home: //AuthWrapper(),
-              const WidgetTree(),
-          // const HomeScreen(),
+          home: AuthWrapper(),
           initialRoute: "/",
           onGenerateRoute: generateRoute,
           navigatorObservers: [MyNavigatorObserver()],
