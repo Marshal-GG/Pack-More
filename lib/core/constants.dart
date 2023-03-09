@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:packmore/master_components/size_config.dart';
+import 'package:packmore/core/size_config.dart';
 
 // Light theme colors
 const kTextColor = Color(0xFF535353);

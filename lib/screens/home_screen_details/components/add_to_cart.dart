@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../master_components/constants.dart';
+import '../../../core/constants.dart';
 import '../../../models/product.dart';
 
 class AddToCart extends StatelessWidget {
@@ -23,13 +23,23 @@ class AddToCart extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(18),
               border: Border.all(
-                color: product.color,
+                color: Color.fromRGBO(
+                  int.parse(product.color.substring(1, 3), radix: 16),
+                  int.parse(product.color.substring(3, 5), radix: 16),
+                  int.parse(product.color.substring(5, 7), radix: 16),
+                  1,
+                ),
               ),
             ),
             child: IconButton(
               icon: Icon(
                 Icons.add_shopping_cart_outlined,
-                color: product.color,
+                color: Color.fromRGBO(
+                  int.parse(product.color.substring(1, 3), radix: 16),
+                  int.parse(product.color.substring(3, 5), radix: 16),
+                  int.parse(product.color.substring(5, 7), radix: 16),
+                  1,
+                ),
               ),
               onPressed: () {},
             ),
@@ -39,10 +49,16 @@ class AddToCart extends StatelessWidget {
               height: 50,
               child: TextButton(
                   style: TextButton.styleFrom(
-                      foregroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18)),
-                      backgroundColor: product.color),
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18)),
+                    backgroundColor: Color.fromRGBO(
+                      int.parse(product.color.substring(1, 3), radix: 16),
+                      int.parse(product.color.substring(3, 5), radix: 16),
+                      int.parse(product.color.substring(5, 7), radix: 16),
+                      1,
+                    ),
+                  ),
                   onPressed: () {},
                   child: Text(
                     "Buy Now".toUpperCase(),

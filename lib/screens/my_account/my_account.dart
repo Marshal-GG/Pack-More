@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:packmore/master_components/constants.dart';
-import 'package:packmore/master_components/size_config.dart';
-import 'package:packmore/models/user.dart';
+import 'package:packmore/core/constants.dart';
+import 'package:packmore/core/notifiers.dart';
 import 'package:packmore/screens/my_account/edit_my_account_details/edit_my_account_details.dart';
 import 'package:packmore/screens/profile/components/profile_pic.dart';
-import 'package:packmore/utils/user_preferences.dart';
+import 'package:packmore/core/utils/user_preferences.dart';
 
 class MyAccountPage extends StatefulWidget {
   const MyAccountPage({super.key});
@@ -16,13 +15,13 @@ class MyAccountPage extends StatefulWidget {
 class _MyAccountPageState extends State<MyAccountPage> {
   @override
   Widget build(BuildContext context) {
-    final user = UserPreferences.myUser;
+    const user = UserPreferences.myUser;
     return Scaffold(
       appBar: buildAppBar(),
-      body: Scaffold(
-        body: SingleChildScrollView(
-          child: Column(children: [
-            SizedBox(height: getProportionateScreenHeight(kDefaultPaddin)),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(height: kDefaultPaddin),
             Center(
                 child: ProfilePic(
               isEdit: false,
@@ -34,47 +33,34 @@ class _MyAccountPageState extends State<MyAccountPage> {
                 );
               },
             )),
-            SizedBox(height: getProportionateScreenHeight(kDefaultPaddin / 2)),
-            buildNameEmail(user)
-          ]),
+            SizedBox(height: kDefaultPaddin / 2),
+            ListTile(
+              leading: Icon(Icons.person_outline),
+              title: Text(user.name),
+            ),
+            ListTile(
+              leading: Icon(Icons.mail_outline),
+              title: Text(user.email),
+            ),
+            ListTile(
+              leading: Icon(Icons.info_outline),
+              title: Text(user.about),
+            ),
+          ],
         ),
       ),
-    );
-  }
-
-  Column buildNameEmail(User user) {
-    return Column(
-      children: [
-        Text(
-          user.name,
-          style: headingStyle,
-        ),
-        SizedBox(height: getProportionateScreenHeight(kDefaultPaddin / 2)),
-        Text(
-          user.email,
-          style: const TextStyle(color: Colors.grey),
-        )
-      ],
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          isDarkModeNotifier.value = !isDarkModeNotifier.value;
+        },
+        child: Icon(Icons.dark_mode_outlined),
+      ),
     );
   }
 
   AppBar buildAppBar() {
     return AppBar(
-      elevation: 0,
-      // leading: MenuWidget(),
-      title: const Text(
-        "My Account",
-        style: TextStyle(color: kPrimaryColor),
-      ),
-      backgroundColor: kPrimaryLightColor,
-      centerTitle: true,
-      leading: IconButton(
-        icon: const Icon(
-          Icons.arrow_back,
-          color: kPrimaryColor,
-        ),
-        onPressed: () => Navigator.pop(context),
-      ),
+      title: const Text("My Account"),
     );
   }
 }

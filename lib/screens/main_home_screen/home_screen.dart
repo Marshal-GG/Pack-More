@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:packmore/side_drawer/side_drawer.dart';
-import '../../master_components/constants.dart';
+import '../../core/constants.dart';
 import 'components/body.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -15,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
-      body: const Body(),
+      body: Body(),
     );
   }
 

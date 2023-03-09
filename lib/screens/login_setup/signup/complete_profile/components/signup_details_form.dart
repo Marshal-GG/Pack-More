@@ -8,9 +8,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 
 // ignore: depend_on_referenced_packages
 import 'package:intl/intl.dart';
-import '../../../../../master_components/constants.dart';
+import '../../../../../core/constants.dart';
 import '../../../../main_home_screen/home_screen.dart';
-import '../../../../../master_components/size_config.dart';
+import '../../../../../core/size_config.dart';
 import '../../../components/already_have_an_account_check.dart';
 import '../../otp/otp_screen.dart';
 

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get_it/get_it.dart';
 import 'package:packmore/firebase_options.dart';
-import 'package:packmore/master_components/services/firebase_services.dart';
-import 'package:packmore/screens/bottom_navigation_bar/body.dart';
+import 'package:packmore/core/services/firebase_services.dart';
+import 'package:packmore/screens/bottom_navigation_bar/bottom_navigation_bar_widget.dart';
 import 'package:packmore/screens/login_setup/welcome/welcome_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 

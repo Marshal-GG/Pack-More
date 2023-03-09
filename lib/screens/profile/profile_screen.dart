@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:packmore/master_components/constants.dart';
+import 'package:packmore/core/constants.dart';
 import 'package:packmore/side_drawer/side_drawer.dart';
 import 'components/body.dart';
 

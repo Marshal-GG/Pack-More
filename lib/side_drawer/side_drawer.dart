@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/config.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
-import 'package:packmore/master_components/constants.dart';
-import 'package:packmore/screens/bottom_navigation_bar/body.dart';
+import 'package:packmore/core/constants.dart';
+import 'package:packmore/screens/bottom_navigation_bar/bottom_navigation_bar_widget.dart';
 import 'package:packmore/screens/main_home_screen/home_screen.dart';
 import 'package:packmore/side_drawer/menu_page.dart';
 

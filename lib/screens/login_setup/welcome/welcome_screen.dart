@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../../../master_components/constants.dart';
-import '../../../master_components/size_config.dart';
+import '../../../core/constants.dart';
+import '../../../core/size_config.dart';
 import '../components/background.dart';
 import '../components/social_sign_up.dart';
 import '../responsive.dart';

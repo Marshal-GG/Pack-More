@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:packmore/master_components/constants.dart';
-import 'package:packmore/utils/user_preferences.dart';
+import 'package:packmore/core/constants.dart';
+import 'package:packmore/core/utils/user_preferences.dart';
 
 class ProfilePic extends StatelessWidget {
   final VoidCallback press;
@@ -36,8 +36,8 @@ class ProfilePic extends StatelessWidget {
       right: -12,
       bottom: 0,
       child: SizedBox(
-        height: 46,
-        width: 46,
+        height: 44,
+        width: 44,
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             padding: EdgeInsets.zero,

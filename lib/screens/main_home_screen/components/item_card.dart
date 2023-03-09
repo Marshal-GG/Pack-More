@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../../../master_components/constants.dart';
+import '../../../core/constants.dart';
 import '../../../../models/product.dart';
 
 class ItemCard extends StatelessWidget {
@@ -25,7 +24,12 @@ class ItemCard extends StatelessWidget {
               // height: 180,
               // width: 160,
               decoration: BoxDecoration(
-                color: product.color,
+                color: Color.fromRGBO(
+                  int.parse(product.color.substring(1, 3), radix: 16),
+                  int.parse(product.color.substring(3, 5), radix: 16),
+                  int.parse(product.color.substring(5, 7), radix: 16),
+                  1,
+                ),
                 borderRadius: BorderRadius.circular(16),
               ),
               child:

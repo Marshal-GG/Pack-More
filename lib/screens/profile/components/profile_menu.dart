@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../master_components/constants.dart';
+import '../../../core/constants.dart';
 import 'body.dart';
 
 class ProfileMenu extends StatelessWidget {
