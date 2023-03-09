@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:packmore/screens/bottom_navigation_bar/body.dart';
-import '../../../../master_components/constants.dart';
+import 'package:packmore/screens/bottom_navigation_bar/bottom_navigation_bar_widget.dart';
+import '../../../../core/constants.dart';
 import '../../../main_home_screen/home_screen.dart';
-import '../../../../master_components/size_config.dart';
+import '../../../../core/size_config.dart';
 import '../../components/already_have_an_account_check.dart';
 import '../../forgot_password/forgot_password.dart';
 import '../../signup/email_pass/signup_screen.dart';

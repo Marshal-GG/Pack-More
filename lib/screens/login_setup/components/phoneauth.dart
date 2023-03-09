@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import '../../../master_components/constants.dart';
+import '../../../core/constants.dart';
 import '../../main_home_screen/home_screen.dart';
 
 class PhoneNumberScreen extends StatefulWidget {

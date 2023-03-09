@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../../../../master_components/constants.dart';
+import '../../../../../core/constants.dart';
 import 'package:intl/intl.dart';
 
 final currentUser = FirebaseAuth.instance.currentUser;

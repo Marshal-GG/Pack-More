@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../master_components/constants.dart';
+import '../../../core/constants.dart';
 
 class Categories extends StatefulWidget {
   const Categories({Key? key}) : super(key: key);
@@ -53,7 +53,7 @@ class _CategoriesState extends State<Categories> {
             ),
             Container(
               margin: const EdgeInsets.only(top: kDefaultPaddin / 4),
-              height: 2,
+              // height: MediaQuery.of(context).size.height * 0.005,
               width: 30,
               color: selectedIndex == index ? Colors.black : Colors.transparent,
             )

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:packmore/master_components/routes/router.dart';
-import 'package:packmore/master_components/widgets_wrapper.dart';
-import 'master_components/app_theme_data.dart';
-import 'master_components/routes/my_nav_observer.dart';
+import 'core/notifiers.dart';
+import 'core/routes/router.dart';
+import 'core/widget_tree.dart';
+import 'core/widgets_wrapper.dart';
+import 'screens/main_home_screen/home_screen.dart';
+import 'core/app_theme_data.dart';
+import 'core/routes/my_nav_observer.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,16 +20,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: appTheme,
-      title: 'Pack More',
-      home: AuthWrapper(),
-      // const WelcomeScreen(),
-      // const BottomNavigationBarPage(),
-      initialRoute: "/",
-      onGenerateRoute: generateRoute,
-      navigatorObservers: [MyNavigatorObserver()],
+    return ValueListenableBuilder(
+      valueListenable: isDarkModeNotifier,
+      builder: (context, isDark, child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          theme: appTheme(isDark),
+          title: 'Pack More',
+          home: //AuthWrapper(),
+              const WidgetTree(),
+          // const HomeScreen(),
+          initialRoute: "/",
+          onGenerateRoute: generateRoute,
+          navigatorObservers: [MyNavigatorObserver()],
+        );
+      },
     );
   }
 }

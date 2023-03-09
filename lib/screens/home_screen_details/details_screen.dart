@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../master_components/constants.dart';
+import '../../core/constants.dart';
 import '../../../models/product.dart';
 import 'components/body.dart';
 
@@ -10,7 +10,12 @@ class DetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: product.color,
+      backgroundColor: Color.fromRGBO(
+                  int.parse(product.color.substring(1, 3), radix: 16),
+                  int.parse(product.color.substring(3, 5), radix: 16),
+                  int.parse(product.color.substring(5, 7), radix: 16),
+                  1,
+                ),
       appBar: buildAppBar(context),
       body: Body(product: product),
     );
@@ -18,7 +23,12 @@ class DetailsScreen extends StatelessWidget {
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      backgroundColor: product.color,
+      backgroundColor: Color.fromRGBO(
+                  int.parse(product.color.substring(1, 3), radix: 16),
+                  int.parse(product.color.substring(3, 5), radix: 16),
+                  int.parse(product.color.substring(5, 7), radix: 16),
+                  1,
+                ),
       elevation: 0,
       leading: IconButton(
         icon: const Icon(

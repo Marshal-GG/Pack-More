@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:packmore/master_components/constants.dart';
-import 'package:packmore/master_components/size_config.dart';
+import 'package:packmore/core/constants.dart';
+import 'package:packmore/core/size_config.dart';
 import 'package:packmore/screens/login_setup/welcome/welcome_screen.dart';
 import 'package:packmore/screens/my_account/edit_my_account_details/edit_my_account_details.dart';
 import 'package:packmore/screens/my_account/my_account.dart';
@@ -42,7 +42,7 @@ class _BodyState extends State<Body> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            SizedBox(height: getProportionateScreenHeight(kDefaultPaddin)),
+            SizedBox(height: kDefaultPaddin),
             ProfilePic(
                 isEdit: false,
                 press: () {
@@ -52,16 +52,17 @@ class _BodyState extends State<Body> {
                     ),
                   );
                 }),
-            SizedBox(height: getProportionateScreenHeight(kDefaultPaddin)),
+            SizedBox(height: kDefaultPaddin / 2),
             ProfileMenu(
               iconIndex: 0,
               text: "My Account",
               press: () {
-                Navigator.of(context).pushReplacement(
-                  MaterialPageRoute(
-                    builder: (context) => const MyAccountPage(),
-                  ),
-                );
+                Navigator.pushNamed(context, '/my-account-page');
+                // Navigator.of(context).pushReplacement(
+                //   MaterialPageRoute(
+                //     builder: (context) => const MyAccountPage(),
+                //   ),
+                // );
               },
             ),
             ProfileMenu(

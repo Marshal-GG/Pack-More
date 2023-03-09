@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 // ignore: camel_case_types
 class sizeconfig {
   static late MediaQueryData _mediaQueryData;
-  static late double screenWidth;
-  static late double screenHeight;
+  static double screenWidth = 0.0;
+  static double screenHeight = 0.0;
   static double? defaultSize;
   static Orientation? orientation;
 

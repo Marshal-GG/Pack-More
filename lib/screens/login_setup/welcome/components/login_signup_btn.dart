@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../../master_components/constants.dart';
+import '../../../../core/constants.dart';
 import '../../login/login_screen.dart';
 import '../../signup/email_pass/signup_screen.dart';
 

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:packmore/master_components/constants.dart';
-import 'package:packmore/master_components/size_config.dart';
+import 'package:packmore/core/constants.dart';
+import 'package:packmore/core/size_config.dart';
 import 'package:packmore/models/user.dart';
 import 'package:packmore/screens/profile/components/profile_pic.dart';
-import 'package:packmore/utils/user_preferences.dart';
+import 'package:packmore/core/utils/user_preferences.dart';
 
 class EditMyAccountDetailsPage extends StatefulWidget {
   const EditMyAccountDetailsPage({super.key});
