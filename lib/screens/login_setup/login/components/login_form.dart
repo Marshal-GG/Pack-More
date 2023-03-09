@@ -190,14 +190,12 @@ class _LoginFormState extends State<LoginForm> {
       try {
         await _auth
             .signInWithEmailAndPassword(email: email, password: password)
-            .then((uid) => {
-                  Fluttertoast.showToast(msg: "LoginSuccessful"),
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(
-                      builder: (context) => const BottomNavigationBarPage(),
-                    ),
-                  ),
-                });
+            .then(
+              (uid) => {
+                Fluttertoast.showToast(msg: "LoginSuccessful"),
+                Navigator.pushNamed(context, '/widget-tree'),
+              },
+            );
       } on FirebaseAuthException catch (error) {
         // print(error.message);
         Fluttertoast.showToast(

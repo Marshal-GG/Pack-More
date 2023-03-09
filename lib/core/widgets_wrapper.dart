@@ -2,9 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get_it/get_it.dart';
+import 'package:packmore/core/widget_tree.dart';
 import 'package:packmore/firebase_options.dart';
 import 'package:packmore/core/services/firebase_services.dart';
-import 'package:packmore/screens/bottom_navigation_bar/bottom_navigation_bar_widget.dart';
 import 'package:packmore/screens/login_setup/welcome/welcome_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -22,7 +22,7 @@ class AuthWrapper extends StatelessWidget {
           );
         }
         if (snapshot.hasData) {
-          return const BottomNavigationBarPage();
+          return const WidgetTree();
         } else {
           return const WelcomeScreen();
         }
@@ -34,7 +34,7 @@ class AuthWrapper extends StatelessWidget {
 Future<void> initializeApp() async {
   try {
     await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform);
+        options: DefaultFirebaseOptions.currentPlatform);
     GetIt.instance.registerSingleton<FirebaseService>(FirebaseService());
   } catch (e) {
     Fluttertoast.showToast(

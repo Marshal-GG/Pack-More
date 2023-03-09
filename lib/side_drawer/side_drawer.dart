@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/config.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:packmore/core/constants.dart';
-import 'package:packmore/screens/bottom_navigation_bar/bottom_navigation_bar_widget.dart';
-import 'package:packmore/screens/main_home_screen/home_screen.dart';
+import 'package:packmore/core/widget_tree.dart';
 import 'package:packmore/side_drawer/menu_page.dart';
 
 //Not Working
@@ -21,7 +20,7 @@ class _ZoomDrawerState extends State<ZoomDrawerPage> {
   Widget build(BuildContext context) {
     return const ZoomDrawer(
       style: DrawerStyle.style2,
-      mainScreen: BottomNavigationBarPage(),
+      mainScreen: WidgetTree(),
       menuScreen: MenuPage(),
     );
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:packmore/core/constants.dart';
-import 'package:packmore/core/notifiers.dart';
+import 'package:packmore/core/services/notifiers.dart';
 import 'package:packmore/screens/my_account/edit_my_account_details/edit_my_account_details.dart';
 import 'package:packmore/screens/profile/components/profile_pic.dart';
 import 'package:packmore/core/utils/user_preferences.dart';

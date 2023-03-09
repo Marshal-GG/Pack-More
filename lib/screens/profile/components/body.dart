@@ -12,7 +12,7 @@ List<IconData> pvticonsprofile = [
   Icons.person_outline,
   Icons.notifications_outlined,
   Icons.settings_outlined,
-  Icons.help_center_outlined,
+  Icons.help_outlined,
   Icons.info_outline,
   Icons.logout_outlined,
 ];
@@ -44,25 +44,17 @@ class _BodyState extends State<Body> {
           children: [
             SizedBox(height: kDefaultPaddin),
             ProfilePic(
-                isEdit: false,
-                press: () {
-                  Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(
-                      builder: (context) => const EditMyAccountDetailsPage(),
-                    ),
-                  );
-                }),
+              isEdit: false,
+              press: () {
+                Navigator.pushNamed(context, '/edit-my-account-details-page');
+              },
+            ),
             SizedBox(height: kDefaultPaddin / 2),
             ProfileMenu(
               iconIndex: 0,
               text: "My Account",
               press: () {
                 Navigator.pushNamed(context, '/my-account-page');
-                // Navigator.of(context).pushReplacement(
-                //   MaterialPageRoute(
-                //     builder: (context) => const MyAccountPage(),
-                //   ),
-                // );
               },
             ),
             ProfileMenu(
@@ -77,8 +69,10 @@ class _BodyState extends State<Body> {
             ),
             ProfileMenu(
               iconIndex: 3,
-              text: "Help Center",
-              press: () {},
+              text: "Feedback",
+              press: () {
+                Navigator.pushNamed(context, '/feedback-screen');
+              },
             ),
             ProfileMenu(
               iconIndex: 4,
